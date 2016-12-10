@@ -1,0 +1,164 @@
+[
+	{
+		"name":"hide",
+		"sprite": [1, [0,0]],
+		"type" : "starter",
+		"stealth" : 1,
+		"count": 3
+	},
+	{
+		"name":"punch",
+		"sprite": [1, [0, 1]],
+		"type" : "starter",
+		"attack" : 1,
+		"count": 5
+	},
+	{
+		"name":"alarm",
+		"sprite": [1, [2, 2]],
+		"type" : "special"
+	},
+	{
+		"name": "gun",
+		"sprite": [2, [0,0]],
+		"type": "obstacle",
+		"attack" : 2,
+		"count": 3,
+		"obstacle":{
+			"name":"guard",
+			"attack": 2,
+			"alarm" : 4,
+			"type" : "human"
+		}
+	},
+	{
+		"name": "interrogate",
+		"sprite": [2, [0,1]],
+		"type": "obstacle",
+		"special": {
+			"draw_card" : 2
+		},
+		"count": 2,
+		"obstacle":{
+			"name":"patrolling_guard",
+			"any": 5,
+			"speed" : 2,
+			"alarm" : 5,
+			"type": "human"
+		}
+	},
+	{
+		"name": "dont_move",
+		"sprite": [2, [2,1]],
+		"type": "obstacle",
+		"stealth" : 3,
+		"obstacle":{
+			"name":"motion_sensor_hall",
+			"type" : "location",
+			"any": 6,
+			"alarm" : 6
+		}
+	},
+	{
+		"name": "bin",
+		"sprite": [2, [0,2]],
+		"type": "obstacle",
+		"special" : "permanent_discard",
+		"count": 2,
+		"obstacle":{
+			"name":"waste_room",
+			"any" : 6,
+			"alarm": 3,
+			"type" : "location"
+		}
+	},
+	{
+		"name": "follow",
+		"sprite": [2, [2,2]],
+		"type": "obstacle",
+		"stealth" : 1,
+		"special": {
+			"draw_card" : 1
+		},
+		"count": 2,
+		"obstacle":{
+			"name":"guard_dog",
+			"attack": 5,
+			"alarm": 6,
+			"type": "animal",
+			"special":{
+				"slide_to": "human"
+			}
+		}
+	},
+	{
+		"name": "machine_gun",
+		"sprite": [3, [1,0]],
+		"type": "obstacle",
+		"attack" : 3,
+		"obstacle":{
+			"name":"sentry_gun",
+			"type" : "item",
+			"attack": 5,
+			"alarm": 6,
+		}
+	},
+	{
+		"name": "out_of_sight",
+		"sprite": [3, [2,0]],
+		"type": "obstacle",
+		"stealth" : 2,
+		"count" : 5,
+		"obstacle":{
+			"name":"security_camera",
+			"type" : "item",
+			"stealth": 2,
+			"alarm": 8,
+		}
+	},
+	{
+		"name": "flashy_move",
+		"sprite": [3, [1,2]],
+		"type": "obstacle",
+		""
+		"obstacle":{
+			"name":"gym_door",
+			"type" : "lock"
+		}
+	},
+	{
+		"name": "keycard",
+		"sprite": [3, [2,2]],
+		"type": "obstacle",
+		"keep": true,
+		"obstacle":{
+			"name":"sleeping_guard",
+		}
+	},
+	{
+		"name": "chloroform",
+		"sprite": [4, [0,0]],
+		"type": "obstacle",
+		"keep": true,
+		"obstacle":{
+			"name":"infirmary",
+		}
+	},
+	{
+		"name": "throw_a_rock",
+		"sprite": [4, [1,0]],
+		"type": "obstacle",
+		"count" : 2,
+		"obstacle":{
+			"name":"yard_door",
+		}
+	},
+	{
+		"name": "misdirect",
+		"sprite": [4, [0,1]],
+		"type": "obstacle",
+		"obstacle":{
+			"name":"radio_tower",
+		}
+	},
+]
