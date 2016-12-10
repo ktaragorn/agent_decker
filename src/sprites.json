@@ -120,9 +120,13 @@
 		"name": "flashy_move",
 		"sprite": [3, [1,2]],
 		"type": "obstacle",
-		""
+		"attack": {
+			"discard_pile": 1
+		},
 		"obstacle":{
 			"name":"gym_door",
+			"any" : 9,
+			"alarm" : 3,
 			"type" : "lock"
 		}
 	},
@@ -133,6 +137,9 @@
 		"keep": true,
 		"obstacle":{
 			"name":"sleeping_guard",
+			"stealth" : 3,
+			"alarm" : 0,
+			"type": "human"
 		}
 	},
 	{
@@ -140,25 +147,48 @@
 		"sprite": [4, [0,0]],
 		"type": "obstacle",
 		"keep": true,
+		"special": {
+			"interact_with": "human",
+			"discard_to": "discard_pile"
+		},
 		"obstacle":{
 			"name":"infirmary",
+			"stealth" : 3,
+			"alarm" : 3,
+			"type": "location"
 		}
 	},
 	{
 		"name": "throw_a_rock",
 		"sprite": [4, [1,0]],
 		"type": "obstacle",
-		"count" : 2,
+		"attack" : 1,
+		"special" : {
+			"draw_card" : 1,
+			"attack" : 0
+		},
 		"obstacle":{
 			"name":"yard_door",
+			"stealth" : 4,
+			"alarm" : 4,
+			"type": "lock"
 		}
 	},
 	{
 		"name": "misdirect",
 		"sprite": [4, [0,1]],
 		"type": "obstacle",
+		"stealth" : {
+			"play_cards": 2
+		},
 		"obstacle":{
 			"name":"radio_tower",
+			"any" : 7,
+			"alarm" : 6,
+			"type": "location",
+			"special" : {
+				"slide_others" : "human"
+			}
 		}
 	},
 ]
