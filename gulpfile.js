@@ -3,7 +3,12 @@ var concat = require('gulp-concat');
 var coffee = require('gulp-coffee');
 
 var paths = {
-	scripts: ['src/*.js', "src/*.coffee"]
+	scripts: [
+	'src/*.js',
+	'src/game_object.coffee',
+	'src/card.coffee',
+	"src/*.coffee"
+	]
 }
 gulp.task('scripts', function() {
 	return gulp.src(paths.scripts, { sourcemaps: true })

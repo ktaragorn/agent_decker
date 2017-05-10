@@ -1,7 +1,7 @@
 class Card extends GameObject
 	constructor: (image) ->
     @front= image
-    @back =
+    @back = false
 		@flipped = false
 	flip: (state=true) ->
 		@flipped = state
