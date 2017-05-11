@@ -1,4 +1,4 @@
-[
+card_info = [
 	{
 		"name":"hide",
 		"sprite": [1, [0,0]],

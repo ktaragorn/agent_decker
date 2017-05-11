@@ -6,5 +6,7 @@ class Card extends GameObject
 	flip: (state=true) ->
 		@flipped = state
 
+  set_pos: (@x, @y) ->
+
 	draw: (ctx) ->
 		#

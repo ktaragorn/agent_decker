@@ -7,7 +7,8 @@ var paths = {
 	'src/*.js',
 	'src/game_object.coffee',
 	'src/card.coffee',
-	"src/*.coffee"
+	"src/*.coffee",
+	'src/sprites.json'
 	]
 }
 gulp.task('scripts', function() {
