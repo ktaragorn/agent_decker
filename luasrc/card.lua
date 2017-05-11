@@ -2,7 +2,7 @@ require 'luasrc/class'
 Card = class(function(a, data)
    a.data = data
    sprite = a.data.sprite
-   a.sheet = love.graphics.newImage("assets/card_sheets/" .. sprite[1] .. ".png")
+   a.sheet = assets[sprite[1]]
    tilew = 245
    tileh = 345
    a.quad = love.graphics.newQuad(
