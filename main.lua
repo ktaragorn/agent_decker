@@ -19,3 +19,8 @@ end
 function love.draw()
     c:draw()
 end
+
+function love.mousepressed(x,y)
+	c:flip_back(not c.flipped_back)
+	c:set_pos(x,y)
+end
