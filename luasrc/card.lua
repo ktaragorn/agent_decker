@@ -1,10 +1,13 @@
 require 'luasrc/class'
-Card = class(function(a, data)
+require 'luasrc/game_object'
+Card = class(GameObject,function(a, data)
+   GameObject.init(a)
    a._data = data
-   local sprite = a.data.sprite
+   local sprite = a._data.sprite
    a.sheet = assets[sprite[1]]
    local tilew = 245
    local tileh = 345
+   a:set_size(tilew, tileh)
    a.quad = love.graphics.newQuad(
       sprite[2][1]*tilew,
       sprite[2][2]*tileh,
@@ -18,11 +21,6 @@ function Card:draw()
    else
       love.graphics.draw(self.sheet, self.quad, self.x, self.y)
    end
-end
-
-function Card:set_pos(x,y)
-   self.x = x
-   self.y = y
 end
 
 function Card:flip_back(flipped_back)

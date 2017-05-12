@@ -21,6 +21,8 @@ function love.draw()
 end
 
 function love.mousepressed(x,y)
-	c:flip_back(not c.flipped_back)
-	c:set_pos(x,y)
+	if c:mousepressed(x,y) then
+		c:flip_back(not c.flipped_back)
+		c:set_pos(x,y)
+	end
 end
