@@ -2,7 +2,7 @@ require 'luasrc/class'
 
 AlarmCard = class(Card, function(a, data)
 	Card.init(a, data)
-	a.reset_alarm()
+	a:reset_alarm()
 	a.alarm_threshold = 50
 end)
 
@@ -15,5 +15,5 @@ function AlarmCard:reset_alarm()
 end
 
 function AlarmCard:increase_alarm(change )
-	self.alarm_level += change
+	self.alarm_level = self.alarm_level+ change
 end

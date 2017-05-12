@@ -5,12 +5,14 @@ Card = class(GameObject,function(a, data)
    a._data = data
    local sprite = a._data.sprite
    a.sheet = assets[sprite[1]]
-   local tilew = 245
-   local tileh = 345
+   local offsetx = 2
+   local offsety = 2
+   local tilew = 243
+   local tileh = 343
    a:set_size(tilew, tileh)
    a.quad = love.graphics.newQuad(
-      sprite[2][1]*tilew,
-      sprite[2][2]*tileh,
+      offsetx+sprite[2][1]*tilew,
+      offsety+sprite[2][2]*tileh,
       tilew, tileh,
       a.sheet:getDimensions())
    end)

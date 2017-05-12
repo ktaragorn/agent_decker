@@ -1,5 +1,5 @@
 require "luasrc/card"
-
+require "luasrc/alarm_card"
 
 function love.load()
 	assets = {}
@@ -14,10 +14,21 @@ function love.load()
 		stealth= 1,
 		count= 3,
 	})
+	a = AlarmCard({
+		name ="alarm",
+		sprite = {1, {2, 2}},
+		type = "special"
+	})
+	a:set_pos(200,200)
 end
 
 function love.draw()
     c:draw()
+    a:draw()
+end
+
+function love.update(t)
+
 end
 
 function love.mousepressed(x,y)
@@ -26,3 +37,4 @@ function love.mousepressed(x,y)
 		c:set_pos(x,y)
 	end
 end
+
