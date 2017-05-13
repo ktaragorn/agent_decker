@@ -1,4 +1,4 @@
-card_info = [
+[
 	{
 		"name":"hide",
 		"sprite": [1, [0,0]],
@@ -100,7 +100,7 @@ card_info = [
 			"name":"sentry_gun",
 			"type" : "item",
 			"attack": 5,
-			"alarm": 6,
+			"alarm": 6
 		}
 	},
 	{
@@ -113,7 +113,7 @@ card_info = [
 			"name":"security_camera",
 			"type" : "item",
 			"stealth": 2,
-			"alarm": 8,
+			"alarm": 8
 		}
 	},
 	{
@@ -190,5 +190,5 @@ card_info = [
 				"slide_others" : "human"
 			}
 		}
-	},
+	}
 ]

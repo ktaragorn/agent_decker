@@ -1,5 +1,3 @@
-require 'luasrc/class'
-
 AlarmCard = class(Card, function(a, data)
 	Card.init(a, data)
 	a:reset_alarm()

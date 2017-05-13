@@ -1,5 +1,3 @@
-require 'luasrc/vendor/class'
-
 GameObject = class(function(a)
 	a.x = 0
 	a.y = 0

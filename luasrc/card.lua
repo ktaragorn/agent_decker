@@ -1,4 +1,3 @@
-require 'luasrc/vendor/class'
 require 'luasrc/game_object'
 Card = class(GameObject,function(a, data)
    GameObject.init(a)

@@ -1,5 +1,8 @@
+require 'luasrc/vendor/class'
 require "luasrc/card"
 require "luasrc/alarm_card"
+json = require "luasrc/vendor/dkjson"
+require "luasrc/utils"
 
 function love.load()
 	assets = {}
@@ -20,6 +23,8 @@ function love.load()
 		type = "special"
 	})
 	a:set_pos(200,200)
+	card_info = json.decode(io.open("./src/sprites.json"):read("*all"))
+	inspect(card_info)
 end
 
 function love.draw()
