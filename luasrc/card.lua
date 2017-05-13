@@ -1,4 +1,4 @@
-require 'luasrc/class'
+require 'luasrc/vendor/class'
 require 'luasrc/game_object'
 Card = class(GameObject,function(a, data)
    GameObject.init(a)
@@ -10,6 +10,7 @@ Card = class(GameObject,function(a, data)
    local tilew = 243
    local tileh = 343
    a:set_size(tilew, tileh)
+   if a:is_type("obstacle") then a.obstacle = true end
    a.quad = love.graphics.newQuad(
       offsetx+sprite[2][1]*tilew,
       offsety+sprite[2][2]*tileh,
@@ -38,9 +39,18 @@ function Card:is_starter()
 end
 
 function Card:stealth()
-   return self._data.stealth or 0
+   return self:_attr_value("stealth")
 end
 
 function Card:attack()
-   return self._data.attack or 0
+   return self:_attr_value("attack")
+end
+
+function Card:_attr_value(attr)
+   if self.obstacle then
+      attrs = self._data.obstacle
+      return attrs.any or attrs[attr] or 0
+   else
+      return self._data[attr] or 0
+   end
 end
