@@ -1,6 +1,7 @@
 require 'luasrc/vendor/class'
 require "luasrc/card"
 require "luasrc/alarm_card"
+require "luasrc/game"
 json = require "luasrc/vendor/dkjson"
 require "luasrc/utils"
 
@@ -10,36 +11,19 @@ function love.load()
 	for i = 1,6 do
 		assets[i] = love.graphics.newImage("assets/card_sheets/"..i..".png")
 	end
-	c = Card({
-		name="hide",
-		sprite= {1, {0,0}},
-		type= "starter",
-		stealth= 1,
-		count= 3,
-	})
-	a = AlarmCard({
-		name ="alarm",
-		sprite = {1, {2, 2}},
-		type = "special"
-	})
-	a:set_pos(200,200)
-	card_info = json.decode(io.open("./src/sprites.json"):read("*all"))
-	inspect(card_info)
+	assets.card_info = json.decode(io.open("./src/sprites.json"):read("*all"))
+	game = Game()
 end
 
 function love.draw()
-    c:draw()
-    a:draw()
+	game:draw()
 end
 
 function love.update(t)
-
+	game:update(t)
 end
 
 function love.mousepressed(x,y)
-	if c:mousepressed(x,y) then
-		c:flip_back(not c.flipped_back)
-		c:set_pos(x,y)
-	end
+	game:mousepressed(x,y)
 end
 
