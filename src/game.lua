@@ -1,6 +1,6 @@
-require "luasrc/mission"
-require "luasrc/obstacle"
-require "luasrc/player"
+require "src/mission"
+require "src/obstacle"
+require "src/player"
 
 Game = class(ObjectManager, function(a)
 	ObjectManager.init(a)

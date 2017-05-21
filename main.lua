@@ -1,11 +1,11 @@
-require 'luasrc/vendor/class'
-require "luasrc/card"
-require "luasrc/card_deck"
-require "luasrc/object_manager"
-require "luasrc/alarm_card"
-require "luasrc/game"
-json = require "luasrc/vendor/dkjson"
-require "luasrc/utils"
+require 'src/vendor/class'
+require "src/card"
+require "src/card_deck"
+require "src/object_manager"
+require "src/alarm_card"
+require "src/game"
+json = require "src/vendor/dkjson"
+require "src/utils"
 
 function love.load()
 	local w,h, f = love.window.getMode()
@@ -25,7 +25,7 @@ function love.load()
 	for i = 1,6 do
 		assets[i] = love.graphics.newImage("assets/card_sheets/"..i..".png")
 	end
-	assets.card_info = json.decode(io.open("./src/sprites.json"):read("*all"))
+	assets.card_info = json.decode(io.open("./assets/sprites.json"):read("*all"))
 	game = Game()
 end
 

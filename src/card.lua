@@ -1,4 +1,4 @@
-require 'luasrc/game_object'
+require 'src/game_object'
 Card = class(GameObject,function(a, data)
    GameObject.init(a)
    a._data = data

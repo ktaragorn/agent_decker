@@ -1,4 +1,4 @@
-inspect = require "luasrc/vendor/inspect"
+inspect = require "src/vendor/inspect"
 --http://stackoverflow.com/a/17120745
 function swap(array, index1, index2)
     array[index1], array[index2] = array[index2], array[index1]
