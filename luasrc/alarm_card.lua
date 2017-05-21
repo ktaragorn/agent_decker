@@ -18,12 +18,11 @@ end
 
 function AlarmCard:draw()
 	Card.draw(self)
-	love.graphics.print(self.alarm_level, 100, 100)
+	love.graphics.print(self.alarm_level, self.x + self.w - 20, self.y + 20)
 end
 
 function AlarmCard:mousepressed(x,y)
-	print(1)
-	if Card.mousepressed(self) then
+	if Card.mousepressed(self, x, y) then
 		self:increase_alarm(1)
 	end
 end

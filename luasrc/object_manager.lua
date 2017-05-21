@@ -18,7 +18,6 @@ end
 
 function ObjectManager:mousepressed(x,y)
 	for index = #self.objects, 1, -1 do
-		print(index)
 		consumed = self.objects[index]:mousepressed(x,y)
 		if consumed then
 			return true
