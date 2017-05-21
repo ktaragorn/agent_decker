@@ -1,1 +1,1 @@
-Obstacle = class(ObjectManager, function(a, cards) end)
+Obstacle = class(ObjectManager, function(a, cards) ObjectManager.init(a) end)

@@ -1,5 +1,6 @@
 require 'luasrc/vendor/class'
 require "luasrc/card"
+require "luasrc/card_deck"
 require "luasrc/object_manager"
 require "luasrc/alarm_card"
 require "luasrc/game"

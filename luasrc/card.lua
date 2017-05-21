@@ -17,11 +17,11 @@ Card = class(GameObject,function(a, data)
       a.sheet:getDimensions())
    end)
 
-function Card:draw(x,y)
+function Card:draw()
    if self.flipped_back then
-      love.graphics.draw(assets.back, x or self.x, y or self.y)
+      love.graphics.draw(assets.back, self.x, self.y)
    else
-      love.graphics.draw(self.sheet, self.quad, x or self.x, y or self.y)
+      love.graphics.draw(self.sheet, self.quad, self.x, self.y)
    end
 end
 

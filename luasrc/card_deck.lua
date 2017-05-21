@@ -1,7 +1,7 @@
 CardDeck = class(GameObject, function(a, cards, flipped_back)
-	a.cards = cards
-	for card in cards do card:flip_back(flipped_back) end
+	a.cards = {}
 	a.flipped_back = flipped_back
+	a:add_cards_to_top(cards)
 end)
 
 function CardDeck:shuffle()
@@ -13,8 +13,13 @@ function CardDeck:draw()
 end
 
 function CardDeck:add_to_top(card)
+	card:set_pos(self.x, self.y)
 	card:flip_back(self.flipped_back)
-	a.cards[#a.cards + 1] = card
+	self.cards[#self.cards + 1] = card
+end
+
+function CardDeck:add_cards_to_top(cards)
+	for i,card in ipairs(self.cards) do self:add_card_to_top(card) end
 end
 
 function CardDeck:draw_from_top(count)

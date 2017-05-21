@@ -1,1 +1,1 @@
-Mission = class(ObjectManager, function(a, cards) end)
+Mission = class(ObjectManager, function(a, cards) ObjectManager.init(a) end)
