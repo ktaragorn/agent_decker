@@ -16,6 +16,8 @@ function AlarmCard:increase_alarm(change )
 	self.alarm_level = self.alarm_level+ change
 end
 
+function AlarmCard:is_alarm_card() return true end
+
 function AlarmCard:draw()
 	Card.draw(self)
 	love.graphics.print(self.alarm_level, self.x + self.w - 20, self.y + 20)

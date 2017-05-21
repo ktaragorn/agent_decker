@@ -29,13 +29,17 @@ function Card:flip_back(flipped_back)
    self.flipped_back = flipped_back
 end
 
-function Card:is_type(type)
-   return self._data.type == type
-end
+function Card:is_type(type) return self._data.type == type end
 
-function Card:is_starter()
-   return self:is_type("starter")
-end
+function Card:is_starter() return self:is_type("starter") end
+
+function Card:is_obstacle() return self:is_type("obstacle") end
+
+function Card:is_mission() return self:is_type("mission") end
+
+function Card:is_mission_obstacle() return self:is_type("mission_obstacle") end
+
+function Card:is_alarm_card() return false end
 
 function Card:stealth()
    return self:_attr_value("stealth")
