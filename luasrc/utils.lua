@@ -1,8 +1,4 @@
--- todo handle recursion, table of tables
-function inspect(table)
-	for key, value in ipairs(table) do print(key, value) end
-end
-
+inspect = require "luasrc/vendor/inspect"
 --http://stackoverflow.com/a/17120745
 function swap(array, index1, index2)
     array[index1], array[index2] = array[index2], array[index1]
