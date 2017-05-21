@@ -15,7 +15,7 @@ Game = class(ObjectManager, function(a)
     a:add_object(a.obstacle_deck)
     a:add_object(a.player)
 	a:add_object(a.alarm_card)
-	a.alarm_card:set_pos(200,200)
+	a.alarm_card:set_pos({r= vars.screen.w, y = 0})
 end)
 
 function Game.generate_cards(cards_info)

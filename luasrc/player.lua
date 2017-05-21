@@ -1,9 +1,9 @@
 Player = class(ObjectManager, function(a, cards)
 	ObjectManager.init(a)
-	a:add_object(cards[1])
-	a.play_area = {cards[1]}
+	a.play_area = {}
 	a.hand = {}
 	a.equipped = {}
+	a:add_to_play_area(cards)
 	a.discard = CardDeck(cards, true)
 end)
 
@@ -11,11 +11,13 @@ function Player:draw_cards()
 
 end
 
-function Player:mousepressed( x,y )
-	local c = self.play_area[1]
-	if c:mousepressed(x,y) then
-		c:flip_back(not c.flipped_back)
-		c:set_pos(x,y)
+function Player:add_to_play_area(cards)
+	local x, y = 0, 300
+	for i, card in ipairs(cards) do
+		index = #self.play_area
+		card:flip_back(false)
+		card:set_pos(x + card.w * index, y)
+		table.insert(self.play_area, card)
+		self:add_object(card)
 	end
 end
-
