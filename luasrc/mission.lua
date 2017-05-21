@@ -1,0 +1,1 @@
+Mission = class(ObjectManager, function(a, cards) end)
