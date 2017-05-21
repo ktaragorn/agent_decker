@@ -2,6 +2,7 @@ CardDeck = class(GameObject, function(a, cards, flipped_back)
 	a.cards = {}
 	a.flipped_back = flipped_back
 	a:add_cards_to_top(cards)
+	a:set_size(cards[1].w, cards[1].h)
 end)
 
 function CardDeck:shuffle()
