@@ -9,7 +9,7 @@ Card = class(GameObject,function(a, data)
    local tilew = 243
    local tileh = 343
    a:set_size(tilew, tileh)
-   if a:is_type("obstacle") then a.obstacle = true end
+   if a:is_obstacle() then a.obstacle = true end
    a.quad = love.graphics.newQuad(
       offsetx+sprite[2][1]*tilew,
       offsety+sprite[2][2]*tileh,

@@ -3,8 +3,7 @@ Player = class(ObjectManager, function(a, cards)
 	a.play_area = {}
 	a.hand = {}
 	a.equipped = {}
-	a:add_to_play_area(cards)
-	a.discard = CardDeck(cards, true)
+	a.draw_pile = CardDeck(cards, true)
 end)
 
 function Player:draw_cards()
