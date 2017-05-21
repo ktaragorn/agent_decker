@@ -9,7 +9,6 @@ require "src/utils"
 
 function love.load()
 	local w,h, f = love.window.getMode()
-	print(inspect(f))
 	vars = {
 		scale = {
 			x = 0.6,
@@ -25,7 +24,17 @@ function love.load()
 	for i = 1,6 do
 		assets[i] = love.graphics.newImage("assets/card_sheets/"..i..".png")
 	end
+
 	assets.card_info = json.decode(io.open("./assets/sprites.json"):read("*all"))
+
+	assets.bg = love.graphics.newImage("assets/bg.jpg")
+	assets.bg:setWrap("repeat", "repeat")
+	assets.bg_quad = love.graphics.newQuad(
+	    0, 0,
+	    vars.screen.w, vars.screen.h,
+	    assets.bg:getWidth(), assets.bg:getHeight()
+	)
+
 	game = Game()
 end
 

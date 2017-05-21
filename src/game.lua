@@ -53,3 +53,8 @@ function Game:split_cards()
 
 	return mission, obstacle, player, alarm_card
 end
+
+function Game:draw()
+	love.graphics.draw(assets.bg, assets.bg_quad, 0,0)
+	ObjectManager.draw(self)
+end
